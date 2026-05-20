@@ -417,6 +417,45 @@
     margin: 0;
   }
   
+  .cover-notice {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    padding: 16px 28px;
+    border-radius: 100px;
+    box-shadow: var(--shadow-card);
+    font-size: 16px;
+    color: var(--ink-soft);
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: calc(100% - 80px);
+  }
+  
+  .cover-notice strong {
+    color: var(--peach-deep);
+    font-weight: 700;
+  }
+  
+  .cover-notice-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--bg-pink);
+    color: var(--peach-deep);
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
   /* ─────────── WHY (Slide 2) ─────────── */
   .why-layout {
     flex: 1;
@@ -1120,6 +1159,8 @@
     .cover-eyebrow { font-size: 12px; gap: 10px; }
     .cover-eyebrow::before { width: 24px; }
     .cover-subtitle { font-size: 16px; }
+    .cover-notice { bottom: 60px; font-size: 13px; padding: 10px 18px; white-space: normal; text-align: center; line-height: 1.4; gap: 8px; }
+    .cover-notice-icon { width: 20px; height: 20px; font-size: 11px; }
     .change-card-comparison { flex-direction: column; }
     .change-arrow { transform: rotate(90deg); align-self: flex-start; }
     h1.headline { font-size: clamp(28px, 7vw, 40px); }
@@ -1187,6 +1228,15 @@
         data-en="An overview of 22 items newly added, revised, or repealed,<br>reflecting 2025 labor law updates and internal policy improvements."
         data-cn="本次共有22项条款新设·修订·废止，<br>反映2025年劳动法修订与内部运营整顿事项。"
         data-jp="2025年の労働法改正と社内運用整備事項を反映した<br>22項目の新設・改定・廃止内容をご案内します。">2025년 노동법 개정과 내부 운영 정비 사항을 반영한<br>22개 항목의 신설·개정·폐지 내용을 안내 드립니다.</p>
+    </div>
+    
+    <div class="cover-notice" data-anim="5">
+      <span class="cover-notice-icon">ⓘ</span>
+      <span class="t"
+        data-kr="본 취업규칙은 <strong>한국 법인 오피스 소속 임직원</strong>에게만 적용됩니다."
+        data-en="These Employment Rules apply only to <strong>employees of the Korea office</strong>."
+        data-cn="本员工守则仅适用于<strong>韩国法人办公室所属员工</strong>。"
+        data-jp="本就業規則は<strong>韓国法人オフィス所属の役職員</strong>にのみ適用されます。">본 취업규칙은 <strong>한국 법인 오피스 소속 임직원</strong>에게만 적용됩니다.</span>
     </div>
   </section>
   
