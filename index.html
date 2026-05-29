@@ -175,7 +175,7 @@
   .slide {
     position: absolute;
     inset: 0;
-    padding: 96px 72px 88px;
+    padding: clamp(56px, 7vh, 88px) clamp(28px, 4vw, 64px) clamp(48px, 7vh, 80px);
     display: flex;
     flex-direction: column;
     opacity: 0;
@@ -192,7 +192,7 @@
   /* SLIDE META */
   .slide-num {
     position: absolute;
-    top: 96px; right: 72px;
+    top: clamp(20px, 4vh, 36px); right: clamp(20px, 4vw, 40px);
     font-size: 13px;
     color: var(--muted);
     display: flex;
@@ -214,7 +214,7 @@
   
   .slide-tag {
     position: absolute;
-    bottom: 88px; left: 72px;
+    bottom: clamp(20px, 4vh, 36px); left: clamp(20px, 4vw, 40px);
     font-size: 12px;
     color: var(--peach-deep);
     font-weight: 600;
@@ -234,15 +234,15 @@
   
   /* TYPOGRAPHY */
   .eyebrow {
-    font-size: 14px;
+    font-size: clamp(11px, 0.95vw, 13px);
     color: var(--peach-deep);
-    margin-bottom: 20px;
+    margin-bottom: clamp(10px, 1.5vh, 18px);
     font-weight: 700;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: var(--bg-pink);
-    padding: 9px 18px;
+    padding: 7px 14px;
     border-radius: 100px;
     align-self: flex-start;
   }
@@ -257,11 +257,11 @@
   h1.headline {
     font-family: inherit;
     font-weight: 700;
-    font-size: clamp(40px, 5.4vw, 72px);
-    line-height: 1.18;
+    font-size: clamp(30px, 4vw, 56px);
+    line-height: 1.2;
     letter-spacing: -0.03em;
     color: var(--ink);
-    margin-bottom: 28px;
+    margin-bottom: clamp(14px, 2vh, 26px);
     max-width: 22ch;
     position: relative;
     z-index: 1;
@@ -594,9 +594,10 @@
   .changes-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 24px;
+    gap: clamp(8px, 1vh, 14px);
+    margin-top: clamp(12px, 2vh, 20px);
     flex: 1;
+    min-height: 0;
   }
   
   .changes-grid.three {
@@ -605,13 +606,14 @@
   
   .change-card {
     background: var(--bg-card);
-    padding: 22px 24px 24px;
+    padding: clamp(18px, 1.8vh, 26px) clamp(20px, 1.6vw, 28px);
     border-radius: 18px;
     box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    min-height: 0;
   }
   
   .change-card::before {
@@ -630,16 +632,17 @@
   .change-card-header {
     display: flex;
     align-items: baseline;
-    gap: 10px;
-    margin-bottom: 14px;
+    gap: 8px;
+    margin-bottom: clamp(8px, 1.2vh, 14px);
+    flex-wrap: wrap;
   }
   
   .change-card-article {
-    font-size: 14px;
+    font-size: clamp(12px, 1vw, 14px);
     color: var(--peach-deep);
     font-weight: 700;
     background: var(--bg-pink);
-    padding: 5px 12px;
+    padding: 4px 11px;
     border-radius: 100px;
   }
   
@@ -647,10 +650,10 @@
     display: inline-block;
     padding: 4px 11px;
     border-radius: 100px;
-    font-size: 12px;
+    font-size: clamp(11px, 0.9vw, 12px);
     font-weight: 700;
     letter-spacing: 0.02em;
-    margin-left: 6px;
+    margin-left: 4px;
     flex-shrink: 0;
   }
   
@@ -669,7 +672,7 @@
   .change-card.pink .change-card-article { background: var(--bg-pink); color: var(--peach-deep); }
   
   .change-card-topic {
-    font-size: 20px;
+    font-size: clamp(16px, 1.35vw, 20px);
     font-weight: 700;
     color: var(--ink);
     letter-spacing: -0.015em;
@@ -678,17 +681,17 @@
   .change-card-comparison {
     display: flex;
     align-items: stretch;
-    gap: 10px;
-    margin-bottom: 14px;
+    gap: 8px;
+    margin-bottom: clamp(8px, 1.2vh, 14px);
   }
   
   .change-side {
     flex: 1;
-    padding: 12px 14px;
-    border-radius: 12px;
+    padding: clamp(8px, 1vh, 12px) clamp(10px, 1vw, 14px);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
   }
   
   .change-side.before {
@@ -712,7 +715,7 @@
   }
   
   .change-side-label {
-    font-size: 13px;
+    font-size: clamp(11px, 0.9vw, 13px);
     color: var(--muted);
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -726,7 +729,7 @@
   .change-card.butter .change-side.after .change-side-label { color: var(--butter); }
   
   .change-side-text {
-    font-size: 17px;
+    font-size: clamp(15px, 1.2vw, 17px);
     color: var(--ink);
     line-height: 1.5;
     font-weight: 500;
@@ -746,13 +749,17 @@
   }
   
   .change-card-note {
-    font-size: 16px;
+    font-size: clamp(14px, 1.15vw, 16px);
     line-height: 1.7;
     color: var(--ink-soft);
     background: var(--bg);
-    padding: 16px 18px;
+    padding: clamp(12px, 1.3vh, 16px) clamp(14px, 1.1vw, 18px);
     border-radius: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .change-card-note strong {
+    font-weight: 700;
   }
   
   .change-card-note::before {
@@ -761,7 +768,7 @@
   }
   
   .change-card-meta {
-    font-size: 13px;
+    font-size: clamp(11px, 0.9vw, 13px);
     color: var(--muted);
     font-weight: 500;
     margin-top: auto;
@@ -1133,7 +1140,6 @@
   
   /* RESPONSIVE */
   @media (max-width: 1200px) {
-    .slide { padding: 80px 32px 72px; }
     .overview-grid { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
     .changes-grid, .changes-grid.three { grid-template-columns: 1fr; }
     .why-layout, .category-hero { grid-template-columns: 1fr; gap: 24px; }
@@ -1143,8 +1149,65 @@
     footer { padding: 12px 20px 18px; }
   }
   
+  /* Short viewport (e.g. laptop with browser UI) */
+  @media (max-height: 900px) {
+    .slide { padding: clamp(48px, 6vh, 72px) clamp(24px, 3vw, 56px) clamp(40px, 6vh, 64px); }
+    h1.headline { font-size: clamp(28px, 3.6vw, 44px); margin-bottom: clamp(12px, 1.8vh, 20px); line-height: 1.25; }
+    .lead { font-size: clamp(15px, 1.15vw, 18px); line-height: 1.7; }
+    .eyebrow { font-size: 12px; padding: 6px 14px; margin-bottom: 12px; }
+    .changes-grid { gap: 14px; margin-top: 14px; }
+    .change-card { padding: 20px 22px; }
+    .change-card-header { margin-bottom: 12px; gap: 8px; }
+    .change-card-topic { font-size: 17px; }
+    .change-card-article { font-size: 12px; padding: 4px 10px; }
+    .change-status { font-size: 11px; padding: 3px 10px; }
+    .change-card-comparison { gap: 8px; margin-bottom: 12px; }
+    .change-side { padding: 10px 14px; gap: 4px; }
+    .change-side-label { font-size: 11px; }
+    .change-side-text { font-size: 14px; line-height: 1.5; }
+    .change-card-note { font-size: 13px; line-height: 1.65; padding: 12px 14px; margin-bottom: 8px; }
+    .change-card-note strong { font-weight: 700; }
+    .change-card-meta { font-size: 11px; }
+    .why-cards { gap: 16px; margin-top: 20px; }
+    .why-card { padding: 24px 24px; min-height: auto; gap: 16px; }
+    .why-icon { width: 48px; height: 48px; font-size: 24px; }
+    .why-card-title { font-size: 17px; margin-bottom: 8px; }
+    .why-card-desc { font-size: 14px; line-height: 1.65; }
+    .overview-grid { gap: 14px; margin-top: 20px; }
+    .overview-card { padding: 26px 24px; min-height: auto; }
+    .overview-stat { font-size: 52px; }
+    .overview-stat-row { margin-bottom: 6px; }
+    .overview-title { font-size: 18px; margin: 12px 0; }
+    .overview-desc { font-size: 14px; line-height: 1.65; }
+    .overview-tag { font-size: 11px; margin-bottom: 12px; }
+    .process-timeline { gap: 12px; margin-top: 20px; }
+    .process-step { padding: 22px 20px; }
+    .process-step-badge { width: 32px; height: 32px; font-size: 13px; margin-bottom: 14px; border-radius: 10px; }
+    .process-step-title { font-size: 16px; margin-bottom: 8px; }
+    .process-step-desc { font-size: 13px; line-height: 1.6; }
+    .process-step-status { font-size: 11px; margin-top: 12px; padding-top: 10px; }
+    .quote-text { font-size: 18px; line-height: 1.55; }
+    .quote-emoji { font-size: 26px; margin-bottom: 12px; }
+    .quote-source { font-size: 12px; margin-top: 14px; }
+    .category-hero-right { padding: 28px 26px; }
+    .why-right { padding: 28px 26px; }
+    .why-right-quote { font-size: 18px; line-height: 1.6; }
+    .category-hero { gap: 36px; margin-top: 14px; }
+    .category-meta-row { gap: 14px; margin-top: 18px; }
+    .category-meta-card { padding: 14px 18px; }
+    .category-meta-card .num { font-size: 26px; }
+    .category-meta-card .label { font-size: 12px; margin-top: 4px; }
+    .cover-title { font-size: clamp(36px, 5vw, 60px); }
+    .cover-subtitle { font-size: 16px; line-height: 1.7; }
+    .cover-notice { bottom: 70px; font-size: 14px; padding: 12px 22px; }
+    .cover-eyebrow { font-size: 13px; }
+    .cover-content { gap: 22px; }
+    .closing-quote { font-size: clamp(26px, 3.4vw, 42px); gap: 12px; }
+    .closing-sub { font-size: 15px; }
+  }
+  
   @media (max-width: 768px) {
-    .slide { padding: 72px 20px 64px; }
+    .slide { padding: 60px 18px 56px; }
     .slide-closing { padding: 40px 20px; }
     .closing-content { gap: 18px; }
     .closing-quote { font-size: clamp(20px, 5.5vw, 30px); gap: 10px; }
